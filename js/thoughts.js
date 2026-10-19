@@ -14,7 +14,6 @@ const THOUGHTS = [
       <blockquote>Tasks can be delegated. Responsibility has to be held by someone.</blockquote>
       <h3>The question mark</h3>
       <p>So the honest answer to "will AI take my job?" is: it will take your tasks, and what is left will look different. The open question, the one on the cover, is who decides what the new bundle contains. I suspect that is where most of the interesting research is.</p>`,
-    draft: true,
   },
 ];
 
@@ -97,7 +96,7 @@ const postMeta = t => `<time datetime="${t.date}">${longDate(t.date)}</time> · 
 const thoughtsList = () => `
   <div class="kicker sc rise">p. 6 · Thoughts · newest first</div>
   <h2 class="rise" style="margin-top:10px">Thoughts</h2>
-  <p class="lede rise">Strong views, loosely held, about AI agents, negotiation and organisations. Each one gets a cover, and each cover is made of agents.</p>
+  <p class="lede rise">Strong views, loosely held, about AI agents, negotiation and organisations.</p>
   <div class="posts">
     ${[...THOUGHTS].sort((a, b) => b.date.localeCompare(a.date)).map((t, i) => `
     <article class="post rise" style="--d:${.1 + i * .08}s">
@@ -122,7 +121,6 @@ const thoughtView = t => `
   </header>
   <div class="rise" style="--d:.1s">${coverFig(t, "big")}</div>
   <div class="prose rise" style="--d:.18s">
-    ${t.draft ? `<div class="hand draftnote">first draft, wording still being tuned</div>` : ""}
     ${t.body}
     <div class="endmark">${agent("", `<span class="bubble"></span>`, "button", `aria-label="An agent signing off"`)}<span class="sc">end of entry</span></div>
   </div>

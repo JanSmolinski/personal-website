@@ -416,10 +416,11 @@ img.dk{display:none}
 .epitaph{font-family:var(--f-hand);color:var(--ink-2);font-size:19px}
 .talk-photos{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:34px;align-items:center;margin-bottom:36px}
 @media (max-width:780px){.talk-photos{grid-template-columns:minmax(0,1fr)}}
-.cv .tag{display:inline-block;margin-left:10px;font-variant-caps:all-small-caps;letter-spacing:.08em;font-size:14px;padding:0 7px 1px;border:1px solid currentColor;border-radius:3px;vertical-align:2px;color:var(--faint)}
+.cv .tag,.pubs .tag{display:inline-block;margin-left:10px;font-variant-caps:all-small-caps;letter-spacing:.08em;font-size:14px;padding:0 7px 1px;border:1px solid currentColor;border-radius:3px;vertical-align:2px;color:var(--faint)}
 .cv .r.live .tag{color:var(--sage)}
 .cv .r.live .tag::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor;margin-right:5px;vertical-align:1px;animation:think 1.4s steps(2) infinite}
 .cv .r.now .tag{color:var(--rust)}
+.tag.peer{color:var(--sage)}
 .cv .r.retired b{text-decoration:line-through;text-decoration-thickness:1px;color:var(--ink-2)}
 .cv .r.retired{opacity:.7}
 .book .cover:has(img) > span{display:none}
@@ -817,7 +818,6 @@ dialog.guide::backdrop{background:color-mix(in srgb,var(--ink) 45%,transparent)}
 .prose > p:first-of-type::first-letter{font-size:3.3em;float:left;line-height:.82;padding:.06em .1em 0 0;color:var(--rust)}
 .prose h3{margin:1.6em 0 .5em}
 .prose blockquote{margin:1.6em 0 1.6em -.6em;padding:.1em 0 .1em 1em;border-left:3px solid var(--rust);font-size:1.25em;line-height:1.35;font-style:italic;text-wrap:balance}
-.draftnote{font-size:20px;margin:0 0 14px;transform:rotate(-1deg);transform-origin:left}
 .endmark{display:flex;align-items:flex-end;gap:12px;margin-top:40px;color:var(--faint);cursor:pointer}
 .endmark .agent{--aw:26px}
 .post-head + div,.back{position:relative}

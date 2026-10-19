@@ -21,6 +21,8 @@ const PUBLISHED = [
   ["2024", "Neue Horizonte im Innovationsmanagement – Forschungsimpulse für die Praxis", "Springer Nature, in German", "Book chapter", "Smolinski J., Smolinski R.", "10.1007/978-3-658-44894-3_1"],
   ["2024", "Nachhaltiges Innovationsmanagement: Ideen aus Theorie und Praxis für langfristigen Erfolg", "Springer Nature, in German", "Book chapter", "Smolinski R., Smolinski J., Warecka Z.", "10.1007/978-3-658-44894-3_15"],
 ];
+/* Journal articles get a "peer reviewed" tag in the publication lists. */
+const peerTag = p => p[3] === "Journal article" ? `<span class="tag peer">peer reviewed</span>` : "";
 /* Courses taught, linked to their Aarhus University course catalogue pages. */
 const COURSES = [
   ["Commercial negotiation", "https://kursuskatalog.au.dk/en/course/144536/Commercial-Negotiation"],
@@ -276,7 +278,7 @@ research: () => {
   </div>
   <div class="section rise">
     <div class="sec-head"><h3>Published</h3><span class="sc"><span id="citetotal">from the archive</span> · <a href="https://orcid.org/0009-0000-1429-3105" target="_blank" rel="noopener">ORCID</a></span></div>
-    <ol class="pubs">${PUBLISHED.map(p => `<li${p[5] && !p[5].startsWith("http") ? ` data-doi="${p[5].toLowerCase()}"` : ""}><span class="yr">${p[0]}</span><div><b>${pubTitle(p)}</b><p>${p[4]} · ${p[2]} · ${p[3]}<span class="cite"></span></p></div></li>`).join("")}</ol>
+    <ol class="pubs">${PUBLISHED.map(p => `<li${p[5] && !p[5].startsWith("http") ? ` data-doi="${p[5].toLowerCase()}"` : ""}><span class="yr">${p[0]}</span><div><b>${pubTitle(p)}</b>${peerTag(p)}<p>${p[4]} · ${p[2]} · ${p[3]}<span class="cite"></span></p></div></li>`).join("")}</ol>
   </div>
   <div class="section rise">
     <div class="sec-head"><h3>Reviewing</h3><span class="sc">peer review, from the other side</span></div>
@@ -473,7 +475,7 @@ experience: () => `
       ${rows.map(r => `<div class="r ${r[3] || ""}"><span class="when">${r[0]}</span><div><b>${r[1]}</b>${r[3] ? `<span class="tag">${{ now: "current", live: "current", retired: "retired" }[r[3]]}</span>` : ""}${r[2] ? `<p>${r[2]}</p>` : ""}</div></div>`).join("")}
     </section>`).join("")}
     <section><h3>Publications</h3>
-      ${PUBLISHED.map(p => `<div class="r"><span class="when">${p[0]}</span><div><b>${pubTitle(p)}</b><p>${p[4]} · ${p[2]} · ${p[3]}</p></div></div>`).join("")}
+      ${PUBLISHED.map(p => `<div class="r"><span class="when">${p[0]}</span><div><b>${pubTitle(p)}</b>${peerTag(p)}<p>${p[4]} · ${p[2]} · ${p[3]}</p></div></div>`).join("")}
     </section>
     <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><a class="btn" href="assets/Jan-Smolinski-CV.pdf" download>Download CV as PDF ↓</a><span class="sign">No agents beyond this point</span></div>
   </div></div>
