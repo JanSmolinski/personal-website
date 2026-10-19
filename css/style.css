@@ -697,7 +697,8 @@ dialog.guide::backdrop{background:color-mix(in srgb,var(--ink) 45%,transparent)}
 /* Aarhus right now */
 .nowcard{position:relative;margin-top:10px;padding:18px 22px 12px;background:var(--paper-2);border:1px solid var(--line);transform:rotate(.4deg);box-shadow:3px 4px 14px color-mix(in srgb,var(--ink) 10%,transparent)}
 .now-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
-.now-why{margin:8px 0 0;font-size:19px;color:var(--pen);transform:rotate(-.5deg)}
+.now-why{margin:12px 0 0;padding-top:10px;border-top:1px dashed var(--line);font-size:20px;color:var(--rust);transform:rotate(-.5deg)}
+.now-why + .cc-note{margin-top:14px;font-size:15px;color:var(--faint)}
 .now-why[hidden]{display:none}
 .now-head .hand{font-size:22px;transform:rotate(-1deg)}
 .now-grid{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 34px;margin-top:10px}
