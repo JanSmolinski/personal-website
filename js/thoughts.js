@@ -4,16 +4,15 @@ const THOUGHTS = [
     slug: "agents-take-tasks-not-jobs",
     date: "2026-10-16",
     title: "Why agents will take your tasks but not your job",
-    blurb: "A job is a bundle of tasks held together by a person. Agents are very good at the tasks. They are not yet good at the bundle.",
+    blurb: "Agents are very good at tasks. A job is a role, and much of a role is not a task.",
     cover: "human-question",
     body: `
-      <p>Every few months someone publishes a list of the jobs AI is about to eat. The lists have one thing in common: they treat a job as one thing. It isn't. A job is a bundle of tasks, and a person is what holds the bundle together.</p>
-      <p>Agents are getting very good at tasks. Draft the email, summarise the paper, code the survey, price the offer. In the simulations I run, agents negotiate, pitch and get interviewed perfectly well, one task at a time. What they don't do is decide which tasks matter this week, notice that a colleague is having a bad month, or take the blame when it goes wrong.</p>
-      <h3>The bundle</h3>
-      <p>Take a negotiator. The task is to trade concessions until there is a deal. The job is knowing which deal is worth having, who has to live with it afterwards, and when to walk away from the table altogether. The first part can be handed over. The second needs someone who will still be there next quarter.</p>
-      <blockquote>Tasks can be delegated. Responsibility has to be held by someone.</blockquote>
-      <h3>The question mark</h3>
-      <p>So the honest answer to "will AI take my job?" is: it will take your tasks, and what is left will look different. The open question, the one on the cover, is who decides what the new bundle contains. I suspect that is where most of the interesting research is.</p>`,
+      <p>Every few months someone publishes a list of the jobs AI is about to eliminate. The lists have one thing in common: they treat a job as one coherent thing that is either replaced or not. But in our research on AI agents as role holders we found that even if AI can take over a large chunk of your tasks, there is a lot to a given role that gets forgotten. For example, understanding timing, aligning with co-workers, or showing initiative.</p>
+      <p>Agents are getting very good at tasks. Draft the email, summarise the paper, code the survey, price the offer. In the simulations I run, agents negotiate, pitch and get interviewed perfectly well, one task at a time. What they don't do is decide which tasks matter this week, notice that a colleague is having a bad month, or take responsibility for fixing it when it goes wrong.</p>
+      <p>Take an entrepreneur. The goal is to build a small company into a larger venture that serves its employees and ideally the world. The job is knowing which opportunities and customers to pursue, understanding their needs, and moving your team in the direction of serving them. Clearly this involves a lot of desk work, like compiling lead lists or dealing with the business's finances. This is usually the work AI companies pitch as something they will do for you. But then there is work like convincing investors, apologising to your team and owning up when you screw up, understanding how far you have come, being creative and doing something new, and connecting with customers. This work is much more intangible, and in some ways it is the glue that holds the tangible tasks together.</p>
+      <p>Peter Kesting, in one of his research articles, smartly calls these the small world and the grand world, and predicts that AI agents are bound to stay in the former, contained to well-bounded tasks, while the grand world needs to be approached by humans. Humans need to decide what should be done, what matters in the complex systems they live in, and how it should be done to suit them and others. Only then can they hand over the execution.</p>
+      <p>So the honest answer to "will AI take my job?" is: it will take your tasks, and what is left will look different. The open question is what happens now. Will we all be entrepreneurs who command massive armies of AI agents that do tasks for us, while we pace them, make them understand human needs, and communicate their results to the world, as well as stay liable when they mess up? Time will tell, but I think researchers should spend more time grappling with the role view instead of the task view.</p>`,
+
   },
 ];
 
