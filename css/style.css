@@ -722,6 +722,8 @@ dialog.guide::backdrop{background:color-mix(in srgb,var(--ink) 45%,transparent)}
 .courses a{color:inherit;text-decoration-color:color-mix(in srgb,var(--pen) 40%,transparent);text-underline-offset:4px}
 .courses a:hover{color:var(--rust)}
 .courses .pub-house{font-family:var(--f-serif);font-style:italic;font-size:15px;color:var(--faint);margin-left:4px}
+.courses .uni{white-space:nowrap}
+@media (max-width:480px){.courses .uni{white-space:normal}}
 .reviewing .agent svg.ov{position:absolute;left:0;top:0;width:100%;height:auto;pointer-events:none}
 .reviewing .pen path{stroke:var(--rust);stroke-width:2.2;stroke-linecap:round;fill:none}
 

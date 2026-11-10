@@ -23,17 +23,18 @@ const PUBLISHED = [
 ];
 /* Journal articles get a "peer reviewed" tag in the publication lists. */
 const peerTag = p => p[3] === "Journal article" ? `<span class="tag peer">peer reviewed</span>` : "";
-/* Courses taught, linked to their Aarhus University course catalogue pages. */
+/* Courses taught: [course, catalogue link, university, level]. Level as listed in the catalogue. */
 const COURSES = [
-  ["Commercial negotiation", "https://kursuskatalog.au.dk/en/course/144536/Commercial-Negotiation"],
-  ["Business negotiation", "https://kursuskatalog.au.dk/en/course/141552/Business-Negotiation"],
-  ["Business negotiation project", "https://kursuskatalog.au.dk/en/course/141553/Business-Negotiation-Project"],
-  ["Entrepreneurship and business planning", "https://kursuskatalog.au.dk/en/course/141384/Entrepreneurship-and-Business-Planning"],
+  ["Commercial negotiation", "https://kursuskatalog.au.dk/en/course/144536/Commercial-Negotiation", "Aarhus University", "Master"],
+  ["Business negotiation", "https://kursuskatalog.au.dk/en/course/141552/Business-Negotiation", "Aarhus University", "Master"],
+  ["Business negotiation project", "https://kursuskatalog.au.dk/en/course/141553/Business-Negotiation-Project", "Aarhus University", "Master"],
+  ["Entrepreneurship and business planning", "https://kursuskatalog.au.dk/en/course/141384/Entrepreneurship-and-Business-Planning", "Aarhus University", "Bachelor"],
 ];
-/* Journals reviewed for: [journal, link]. Shown on Research and Experience. */
+/* Journals reviewed for: [journal, link, publisher]. Shown on Research and Experience. */
 const REVIEWING = [
-  ["AI and Ethics", "https://link.springer.com/journal/43681"],
-  ["AI & Society", "https://link.springer.com/journal/146"],
+  ["AI and Ethics", "https://link.springer.com/journal/43681", "Springer"],
+  ["AI & Society", "https://link.springer.com/journal/146", "Springer"],
+  ["Humanities and Social Sciences Communications", "https://www.nature.com/palcomms/", "Springer Nature"],
 ];
 const pubTitle = p => p[5] ? `<a href="${p[5].startsWith("http") ? p[5] : "https://doi.org/" + p[5]}" target="_blank" rel="noopener">${p[1]}</a>` : p[1];
 
@@ -93,7 +94,7 @@ const EXPERIENCE = {
     ["2020 – 2023", "BSc Business Administration and Digital Management", "Copenhagen Business School. Valedictorian."],
   ],
   Reviewing: [
-    ["ad hoc", "Peer reviewer", REVIEWING.map(r => r[0]).join(" · ") + " (Springer)."],
+    ["ad hoc", "Peer reviewer", REVIEWING.map(r => r[0]).join(" · ") + " (Springer Nature)."],
   ],
   "Student life": [
     ["2023 – 2024", "Head of Events, CBS Motors", ""],
@@ -283,14 +284,14 @@ research: () => {
   <div class="section rise">
     <div class="sec-head"><h3>Reviewing</h3><span class="sc">peer review, from the other side</span></div>
     <div class="teaching reviewing">
-      <ul class="courses">${REVIEWING.map(([j, u]) => `<li><a href="${u}" target="_blank" rel="noopener">${j}</a> <span class="pub-house">Springer</span></li>`).join("")}</ul>
+      <ul class="courses">${REVIEWING.map(([j, u, h]) => `<li><a href="${u}" target="_blank" rel="noopener">${j}</a> <span class="pub-house">${h}</span></li>`).join("")}</ul>
       <button class="holder cityagent teacher" aria-label="An agent holding a red pen" data-quip="Jan is Reviewer 2 now. The circle is complete.|Minor revisions. He means it. Mostly.|He reads past the abstract. Every time.|Polite, thorough, and only one “have you considered”.|Peer review: the only negotiation with no BATNA.">${agent("arms", `<span class="bubble"></span><svg class="ov pen" viewBox="0 0 32 40" aria-hidden="true"><path d="M27.5 12.5 L31 3.5"/></svg>`)}</button>
     </div>
   </div>
   <div class="section rise">
     <div class="sec-head"><h3>Teaching</h3><span class="sc">from the front of the room</span></div>
     <div class="teaching">
-      <ul class="courses">${COURSES.map(([c, u]) => `<li><a href="${u}" target="_blank" rel="noopener">${c}</a></li>`).join("")}</ul>
+      <ul class="courses">${COURSES.map(([c, u, uni, lvl]) => `<li><a href="${u}" target="_blank" rel="noopener">${c}</a>&nbsp;<span class="pub-house uni">${uni} · ${lvl}</span></li>`).join("")}</ul>
       <button class="holder cityagent teacher" aria-label="An agent with a pointer" data-quip="Everyone in this room has a BATNA. Check yours.|Lecture rule one: never open with your reservation price.|Office hours: always open to a counter-offer.|Syllabus: BATNA, ZOPA, and snacks.|Students negotiate. Jan grades. Agents take notes.">${agent("arms", `<span class="bubble"></span>`)}</button>
     </div>
   </div>
