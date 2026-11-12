@@ -32,9 +32,10 @@ const COURSES = [
 ];
 /* Journals reviewed for: [journal, link, publisher]. Shown on Research and Experience. */
 const REVIEWING = [
-  ["AI and Ethics", "https://link.springer.com/journal/43681", "Springer"],
-  ["AI & Society", "https://link.springer.com/journal/146", "Springer"],
+  ["AI and Ethics", "https://link.springer.com/journal/43681", "Springer Nature"],
+  ["AI & Society", "https://link.springer.com/journal/146", "Springer Nature"],
   ["Humanities and Social Sciences Communications", "https://www.nature.com/palcomms/", "Springer Nature"],
+  ["Negotiation and Conflict Management Research", "https://ncmr.lps.library.cmu.edu/", "IACM"],
 ];
 const pubTitle = p => p[5] ? `<a href="${p[5].startsWith("http") ? p[5] : "https://doi.org/" + p[5]}" target="_blank" rel="noopener">${p[1]}</a>` : p[1];
 
@@ -94,7 +95,7 @@ const EXPERIENCE = {
     ["2020 – 2023", "BSc Business Administration and Digital Management", "Copenhagen Business School. Valedictorian."],
   ],
   Reviewing: [
-    ["ad hoc", "Peer reviewer", REVIEWING.map(r => r[0]).join(" · ") + " (Springer Nature)."],
+    ["ad hoc", "Peer reviewer", REVIEWING.map(r => r[0]).join(" · ") + "."],
   ],
   "Student life": [
     ["2023 – 2024", "Head of Events, CBS Motors", ""],
